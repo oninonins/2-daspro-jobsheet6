@@ -24,19 +24,32 @@ public class Main {
             list.tampil();
 
             //melakukan pencrian data squential s
+            // System.out.println("-------------------------------------------------");
+            // System.out.println("Pencarian Data ");
+            // System.out.println("-------------------------------------------------");
+            // System.out.println("Masukkan IPK mahasiswa yang dicari : ");
+            // System.out.print("IPK : ");
+            // double cari = Double.parseDouble(sc.nextLine());
+
+            // System.out.println("menggunakan sequential searching");
+            // double posisi = list.sequentialSearching(cari);
+            // int pss = (int) posisi;
+            // list.tampilPosisi(cari, pss);
+            // list.tampilDataSearch(cari, pss);
+
+            //melakukan pencarian data binary 
             System.out.println("-------------------------------------------------");
             System.out.println("Pencarian Data ");
             System.out.println("-------------------------------------------------");
             System.out.println("Masukkan IPK mahasiswa yang dicari : ");
             System.out.print("IPK : ");
             double cari = Double.parseDouble(sc.nextLine());
-
-            System.out.println("menggunakan sequential searching");
-            double posisi = list.sequentialSearching(cari);
-            int pss = (int) posisi;
-            list.tampilPosisi(cari, pss);
-            list.tampilDataSearch(cari, pss);
-
+            System.out.println("------------------------------");
+            System.out.println("menggunakan binary searching");
+            double posisi = list.findBinary(cari, 0, jumMhs - 1);
+            int pss2 = (int) posisi;
+            list.tampilPosisi(cari, pss2);
+            list.tampilDataSearch(cari, pss2);
 
         
     }

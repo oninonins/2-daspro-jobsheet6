@@ -66,14 +66,33 @@
         //sequrntial searching 
         int sequentialSearching(double cari){
             int posisi = -1;
-            for (int i=0; i<listMhs.length; i++){
-                if (listMhs[i].ipk == cari){
-                    posisi = i;
+            for (int j = 0; j < listMhs.length; j++){
+                if (listMhs[j].ipk == cari){
+                    posisi = j;
                     break;
                 }
             }
             return posisi;
         }
+
+        //binary searching
+        int findBinary(double cari, int left, int right){
+            int mid ;
+            if (right >= left){
+                //proses pembagian
+                mid = (left + right) / 2;
+                if (cari == listMhs[mid].ipk){
+                    return (mid);
+                } else if (cari > listMhs[mid].ipk){
+                    return findBinary(cari, left, mid - 1);
+                } else {
+                    return findBinary(cari, mid + 1, right);
+                    
+                }
+            }
+            return -1;
+            }
+    
 
         //tampilPosisi
         void tampilPosisi(double x, int pos){
