@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class DataDosen {
+public class DataDosen05 {
     Scanner input = new Scanner(System.in);
     Dosen[] dosen = new Dosen[10];
     int idx = 0; 
