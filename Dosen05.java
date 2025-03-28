@@ -1,4 +1,4 @@
-public class Dosen {
+public class Dosen05 {
 
     String kode;
     String nama;
@@ -7,7 +7,7 @@ public class Dosen {
 
 
 
-    Dosen(String kd, String name, boolean jk, int age){
+    Dosen05(String kd, String name, boolean jk, int age){
         kode = kd;
         nama = name;
         jenisKelamin = jk;

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class DataDosen05 {
     Scanner input = new Scanner(System.in);
-    Dosen[] dosen = new Dosen[10];
+    Dosen05[] dosen = new Dosen05[10];
     int idx = 0; 
 
     // Tambah data dosen
@@ -18,7 +18,7 @@ public class DataDosen05 {
             int age = input.nextInt();
 
 
-            dosen[idx] = new Dosen(kd, name, jk, age);
+            dosen[idx] = new Dosen05(kd, name, jk, age);
             idx++;
         } else {
             System.out.println("Data sudah penuh");
@@ -27,7 +27,7 @@ public class DataDosen05 {
 
     // Tampil data
     void tampil() {
-        for (Dosen m : dosen) {
+        for (Dosen05 m : dosen) {
             if (m != null) {
                 m.tampil();
             }
@@ -40,7 +40,7 @@ public class DataDosen05 {
         for (int i = 0; i < idx - 1; i++) { 
             for (int j = 1; j < idx - i; j++) { 
                 if (dosen[j].usia < dosen[j - 1].usia) {
-                    Dosen temp = dosen[j];
+                    Dosen05 temp = dosen[j];
                     dosen[j] = dosen[j - 1];
                     dosen[j - 1] = temp;
                 }
@@ -58,7 +58,7 @@ public class DataDosen05 {
                     idxmax = j;
                 }
             }
-            Dosen temp = dosen[idxmax];
+            Dosen05 temp = dosen[idxmax];
             dosen[idxmax] = dosen[i];
             dosen[i] = temp;
         }
@@ -68,7 +68,7 @@ public class DataDosen05 {
     // Insertion Sort DESC 
     void SortingDSCInsertion() {
         for (int i = 1; i < idx; i++) { 
-            Dosen temp = dosen[i];
+            Dosen05 temp = dosen[i];
             int j = i;
             while (j > 0 && dosen[j - 1].usia < temp.usia) {
                 dosen[j] = dosen[j - 1];
