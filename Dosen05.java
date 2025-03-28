@@ -20,6 +20,11 @@ public class Dosen05 {
         System.out.println("Kode dosen          : " + kode);
         System.out.println("Nama dosen          : " + nama);
         System.out.println("Jenis kelamin dosen : " + jenisKelamin);
+        if (jenisKelamin == true) {
+            System.out.println("Jenis kelamin       : Pria");
+        } else {
+            System.out.println("Jenis kelamin       : Wanita");
+        }
         System.out.println("Usia dosen          : " + usia);
     }
 }
