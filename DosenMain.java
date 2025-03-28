@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class DosenMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        DataDosen data = new DataDosen();
+        DataDosen05 data = new DataDosen05();
 
         int pilih;
         do {
