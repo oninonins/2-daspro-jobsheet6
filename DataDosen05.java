@@ -106,13 +106,32 @@ public class DataDosen05 {
 
     //binary search berdasarkan umur 
     String PencarianDataBinary05(int age) {
-        String nama = " ";
+        String nama = "";
         int left = 0;
         int right = idx - 1;
+        int count = 0;  
+    
         while (left <= right) {
             int mid = (left + right) / 2;
             if (dosen[mid].usia == age) {
                 nama = dosen[mid].nama;
+                count++;
+    
+                // Cek ke kiri 
+                int i = mid - 1;
+                while (i >= 0 && dosen[i].usia == age) {
+                    nama = dosen[i].nama + ", " + nama;
+                    count++;
+                    i--;
+                }
+    
+                // Cek ke kanan 
+                int j = mid + 1;
+                while (j < idx && dosen[j].usia == age) {
+                    nama = nama + ", " + dosen[j].nama;
+                    count++;
+                    j++;
+                }
                 break;
             } else if (dosen[mid].usia < age) {
                 left = mid + 1;
@@ -120,6 +139,14 @@ public class DataDosen05 {
                 right = mid - 1;
             }
         }
-        return nama;
+    
+        // Aturan peringatan
+        if (count == 0) {
+            return "Data tidak ditemukan.";
+        } else if (count > 1) {
+            return "Peringatan! Ditemukan lebih dari satu hasil: " + nama;
+        } else {
+            return "Hasil ditemukan: " + nama;
+        }
     }
 }
